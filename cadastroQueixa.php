@@ -104,6 +104,8 @@ include_once 'produto.php';
                 <option value="1">Qualidade do produto</option>
                 <option value="2">Atendimento ao cliente</option>
                 <option value="3">Entrega</option>
+                <option value="4">Preço</option>
+                <option value="5">Suporte técnico</option>
               </select>
             </div>
           </div>
