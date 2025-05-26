@@ -44,7 +44,7 @@
       <div class="card-body">
         <p class="card-text">Cadastre sua empresa no QUEIXA.COM e destaque-se com as 
             melhores avaliações para atrair mais clientes</p>
-        <a href="#" class="btn btn-custom-card">Fazer cadastro como empresa</a>
+        <a href="cadastroEmpresa.php" class="btn btn-custom-card">Fazer cadastro como empresa</a>
       </div>
     </div>
     <!-- Cadastro como consumidor -->
@@ -53,7 +53,7 @@
       <div class="card-body">
         <p class="card-text">Cadastre-se agora para avaliar empresas, registrar suas 
             reclamações e ajudar outros consumidores com sua experiência </p>
-        <a href="#" class="btn btn-custom-card">Fazer cadastro como consumidor</a>
+        <a href="cadastroUsuario.php" class="btn btn-custom-card">Fazer cadastro como consumidor</a>
       </div>
     </div>
   </div>

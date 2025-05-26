@@ -1,14 +1,7 @@
-<?php
-include_once './usuario.php';
-include_once './empresa.php';
-?>
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -20,17 +13,10 @@ session_start();
         crossorigin="anonymous"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/MenuPrincipal.css">
-    <link rel="stylesheet" href="css/ListaMelhoresEmp.css">
-
-    <!-- Google Charts -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- JS externo -->
-    <script src="js/graficoMenu.js"></script>
-
+    <link rel="stylesheet" href="css/navBar.css">
+    
     <title>Queixa.com</title>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -75,7 +61,7 @@ session_start();
                                 <li><a class="dropdown-item" href="logout.php">Deslogar</a></li>
                                 <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
                                     <li><a class="dropdown-item" href="perfilEmpresa.php">Perfil da empresa</a></li>
-                                    <li><a class="dropdown-item" href="telaRelatorios.php">Relatórios</a></li>
+                                    <li><a class="dropdown-item" href="#">Relatórios</a></li>
                                 <?php else: ?>
                                     <li><a class="dropdown-item" href="minhasQueixas.php">Minhas Queixas</a></li>
                                 <?php endif; ?>
@@ -92,38 +78,5 @@ session_start();
             </div>
         </div>
     </nav>
-    <div class="container position-relative mt-5" >
-        <div class="box-custom-item1 position-absolute top-0 start-0 m-4 p-4 text-center">
-            <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
-                <a href="perfilEmpresa.php" class="btn btn-custom-item1-empresa ">Veja as queixas da sua empresa</a>
-            <?php else: ?>
-                <a href="cadastroQueixa.php" class="btn btn-custom-item1  me-2">Faça uma queixa</a>
-                <a href="minhasQueixas.php" class="btn btn-custom-item1 ">Minhas queixas</a>
-            <?php endif; ?>
-        </div>
-
-        <div class="box-custom position-absolute top-0 end-0 m-4 p-4 text-center">
-            <div class="dados" style="max-height: 170px; overflow-y: auto;">
-                <h2 class="titulo-grafico">Empresas melhor avaliadas</h2>
-                <?php include 'listarMelhoresEmpresas.php'; ?>
-            </div>
-
-        </div>
-
-        <div class="box-custom-item3 position-absolute bottom-0 start-0 m-4 p-4 text-center">
-            <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
-                <a href="#" class="btn btn-custom-item3  me-2 mb-2"> Cadastre-se como consumidor</a>
-                <p>Registre-se como consumidor e ajude empresas a evoluírem com suas queixas!</p>
-            <?php else: ?>
-                <a href="#" class="btn btn-custom-item3  me-2 mb-2"> Cadastre aqui a sua empresa</a>
-                <p>Cadastre sua empresa no QUEIXA.COM e destaque-se com as melhores avaliações para atrair mais clientes!</p>
-            <?php endif; ?>
-        </div>
-
-        <div class="box-custom position-absolute bottom-0 end-0 m-4 p-4 text-center">
-            <div id="grafico"></div>
-        </div>
-    </div>
 </body>
-
 </html>
