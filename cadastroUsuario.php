@@ -15,6 +15,7 @@
   <!-- No <head> ou antes do </body> -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/cadastro.js"></script> <!-- Arquivo externo -->
+  <link rel="stylesheet" href="css/cadastroUsuario.css">
   <link rel="stylesheet" href="css/navBar.css">
 </head>
 
@@ -42,7 +43,9 @@
   </nav>
 
   <div class="container">
+    <img src="img/mascoteCadastro.png">
     <div class="card">
+      
       <h1>LET'S CADASTRO</h1>
 
       <form action="insertLoginUsuario.php" method="post">
