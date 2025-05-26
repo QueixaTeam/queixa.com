@@ -1,6 +1,12 @@
 <?php
 include_once 'usuario.php';
 session_start();
+
+if(!isset($_SESSION['user'])){
+  header('Location: loginEmpCon.php');
+  exit();
+}
+
 include_once 'conexaoDatabase.php';
 include_once 'empresa.php';
 include_once 'produto.php';
@@ -134,7 +140,7 @@ include_once 'produto.php';
           </div>
           <!--botão envio-->
           <div class="d-flex justify-content-center mt-4">
-            <button type="submit" class="btn btn-primary">Enviar Queixa</button>
+            <button type="submit" href="MenuPrincipal.php" class="btn btn-primary" >Enviar Queixa</button>
           </div>
   </form>                          
       </div>
@@ -155,6 +161,9 @@ include_once 'produto.php';
         campoProduto.style.display = "block";
       } else {
         campoProduto.style.display = "none";
+
+        document.getElementById('idProduto').value = '';
+        document.getElementById('nomeProduto').value = '';
       }
     }
 
