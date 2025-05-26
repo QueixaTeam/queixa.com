@@ -134,7 +134,7 @@ include_once 'produto.php';
           </div>
           <!--botão envio-->
           <div class="d-flex justify-content-center mt-4">
-            <button type="submit" class="btn btn-primary">Enviar Queixa</button>
+            <button type="submit" href="MenuPrincipal.php" class="btn btn-primary" >Enviar Queixa</button>
           </div>
   </form>                          
       </div>

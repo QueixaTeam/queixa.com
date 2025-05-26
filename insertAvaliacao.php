@@ -8,7 +8,8 @@ $sql= "insert into avaliacao(descricao, nota, idUsuario, idEmpresa, idCategAvali
 '".$_POST['idCategAvaliacao']."','".$_POST['idProduto']."')";
 
 if ($conexao->query($sql)==TRUE){
-    $msg= "Queixa registrada com sucesso!!";
+   $msg= "Queixa registrada com sucesso!!";
+   header('Location: MenuPrincipal.php');
 } else{
     $msg= "Error: " .$sql. "<br>". $conexao->error;
 }
@@ -16,4 +17,6 @@ if ($conexao->query($sql)==TRUE){
 $conexao-> close();
 
 echo json_encode(['msg'=>$msg]);
+
+exit;
 ?>
