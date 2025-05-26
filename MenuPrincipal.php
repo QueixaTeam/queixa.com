@@ -112,10 +112,10 @@ session_start();
 
         <div class="box-custom-item3 position-absolute bottom-0 start-0 m-4 p-4 text-center">
             <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
-                <a href="#" class="btn btn-custom-item3  me-2 mb-2"> Cadastre-se como consumidor</a>
+                <a href="cadastroUsuario.php" class="btn btn-custom-item3  me-2 mb-2"> Cadastre-se como consumidor</a>
                 <p>Registre-se como consumidor e ajude empresas a evoluírem com suas queixas!</p>
             <?php else: ?>
-                <a href="#" class="btn btn-custom-item3  me-2 mb-2"> Cadastre aqui a sua empresa</a>
+                <a href="cadastroEmpresa.php" class="btn btn-custom-item3  me-2 mb-2"> Cadastre aqui a sua empresa</a>
                 <p>Cadastre sua empresa no QUEIXA.COM e destaque-se com as melhores avaliações para atrair mais clientes!</p>
             <?php endif; ?>
         </div>
