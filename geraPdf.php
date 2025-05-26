@@ -8,9 +8,9 @@ $tipo = $_GET['tipo'] ?? 'categoria'; // tipo recebido via URL
 
 $arquivosValidos = [
     'queixasProduto' => 'contentQueixasProduto.php',
-    'empresa'   => 'contentEmpresa.php',
-    'usuario'   => 'contentUsuario.php',
-    'denuncia'  => 'contentDenuncia.php'
+    'MediaNotaProd'   => 'contentMediaNotaProd.php',
+    'ProdMelhorQueixa'   => 'contentProdMelhorQueixa.php',
+    'ProdPiorQueixa'  => 'contentProdPiorQueixa.php'
 ];
 
 if (!isset($arquivosValidos[$tipo])) {

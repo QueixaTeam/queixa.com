@@ -1,15 +1,16 @@
-<?php 
+<?php
 include_once 'conexaoDatabase.php';
 include_once 'usuario.php';
 include_once 'empresa.php';
 session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
         rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
@@ -20,9 +21,11 @@ session_start(); ?>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/navBar.css">
-    
+    <link rel="stylesheet" href="css/telaRelatorios.css">
+
     <title>Queixa.com</title>
 </head>
+
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -77,11 +80,21 @@ session_start(); ?>
     </nav>
 
     <!-- Seção do botão centralizado -->
-    <div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
-        <a href="geraPdf.php?tipo=queixasProduto" target="_blank" class="btn btn-primary btn-lg">
+    <div class="container d-flex flex-column justify-content-center align-items-center gap-3" style="height: 80vh;">
+        <a href="geraPdf.php?tipo=queixasProduto" target="_blank" class="btn btn-outline-custom2">
             Gerar Relatório de Queixas por Produto
         </a>
+        <a href="geraPdf.php?tipo=MediaNotaProd" target="_blank" class="btn btn-outline-custom2">
+            Gerar Relatório da Média de Notas por Produto
+        </a>
+        <a href="geraPdf.php?tipo=ProdMelhorQueixa" target="_blank" class="btn btn-outline-custom2">
+            Gerar Relatório de Produtos Bem Avaliados
+        </a>
+        <a href="geraPdf.php?tipo=ProdPiorQueixa" target="_blank" class="btn btn-outline-custom2">
+            Gerar Relatório de Produtos Mal Avaliados
+        </a>
     </div>
-    
+
 </body>
+
 </html>

@@ -1,0 +1,10 @@
+.btn-outline-custom2 {
+  background-color: #1EA2B6; 
+  color: white;
+  border: none;
+}
+
+.btn-outline-custom2:hover {
+  background-color: #178C99; 
+  color: white;
+}
