@@ -1,6 +1,12 @@
 <?php
 include_once 'usuario.php';
 session_start();
+
+if(!isset($_SESSION['user'])){
+  header('Location: loginEmpCon.php');
+  exit();
+}
+
 include_once 'conexaoDatabase.php';
 include_once 'empresa.php';
 include_once 'produto.php';

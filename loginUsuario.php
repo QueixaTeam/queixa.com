@@ -56,7 +56,7 @@ session_start();
     <!--texto a direita na tela-->
     <div class="right-area">
       <p class="fs-1 text-center">Ainda não possui cadastro?</p>
-      <button type="submit" class="btn btn-custom w-100">Cadastrar-se</button>
+      <a href="cadastroUsuario.php" class="btn btn-custom">Cadastrar-se</a>
     </div>
 
     <!--cor de fundo azul (lado esquerdo)-->
