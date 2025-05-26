@@ -3,7 +3,7 @@ require_once 'conexaoDatabase.php';
 
 // Sanitiza e valida os dados de entrada
 $cnpj = mysqli_real_escape_string($conexao, $_POST['cnpj']);
-$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+$senha = $_POST['senha']; 
 $nomeEmpresa = mysqli_real_escape_string($conexao, $_POST['empresa']);
 $idSetor = (int)$_POST['setor'];
 $endereco = mysqli_real_escape_string($conexao, $_POST['endereco']);
