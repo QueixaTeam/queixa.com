@@ -1,3 +1,11 @@
+<?php
+session_start();
+include_once 'conexaoDatabase.php';
+
+$query = "SELECT idSetor, nomeSetor FROM setor"; // Ajuste para sua tabela
+$result = mysqli_query($conexao, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,6 +22,7 @@
     <title>Queixa.com</title>
     <!-- No <head> ou antes do </body> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/cadastro.js"></script> <!-- Arquivo externo -->
     <link rel="stylesheet" href="css/navBar.css">
     <link rel="stylesheet" href="css/cadastroEmpresa.css">
@@ -42,7 +51,49 @@
         </div>
     </nav>
 
-   
+
+    <div class="container">
+        <div class="card p-4 mx-auto" style="max-width: 600px;">
+            <form action="insertCadEmpresa.php" method="post">
+                <h1 class="text-center mb-4">Vamos cadastrar sua empresa!</h1>
+
+                <div class="mb-3">
+                    <label for="empresa" class="form-label">Digite o nome da empresa:</label>
+                    <input type="text" class="form-control" id="empresa" name="empresa" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Digite a senha:</label>
+                    <input type="password" class="form-control" id="senha" name="senha" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cnpj" class="form-label">Digite seu CNPJ</label>
+                    <input type="text" class="form-control" id="cnpj" name="cnpj" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="endereco" class="form-label">Digite o endereço:</label>
+                    <input type="text" class="form-control" id="endereco" name="endereco" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="setor" class="form-label">Qual o setor da empresa?</label>
+                    <select class="form-select" id="setor" name="setor" required>
+                        <option value="">Selecione um setor...</option>
+                        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                            <option value="<?= $row['idSetor'] ?>">
+                                <?= htmlspecialchars($row['nomeSetor']) ?>
+                            </option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">CADASTRAR</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>

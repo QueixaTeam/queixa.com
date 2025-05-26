@@ -1,25 +1,26 @@
 <?php
-include 'conexaoDatabase.php'; 
+require_once 'conexaoDatabase.php';
 
-header('Content-type: application/json');
+// Sanitiza e valida os dados de entrada
+$cnpj = mysqli_real_escape_string($conexao, $_POST['cnpj']);
+$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+$nomeEmpresa = mysqli_real_escape_string($conexao, $_POST['empresa']);
+$idSetor = (int)$_POST['setor'];
+$endereco = mysqli_real_escape_string($conexao, $_POST['endereco']);
 
-$sql = "INSERT INTO usuario (nomeUsuario, senhaUsuario, email) VALUES ('"
-        .$_POST['nomeUsuario']."', '".$_POST['senhaUsuario']."', '".$_POST['email']."')";
-        
+// Query de inserção
+$sql = "INSERT INTO empresa (cnpj, senhaEmpresa, nomeEmpresa, idSetor, endereco) 
+        VALUES ('$cnpj', '$senha', '$nomeEmpresa', $idSetor, '$endereco')";
 
-if ($conexao->query($sql) === TRUE) {
-    $conexao->close();
-    //$msg = "Usuário criado com sucesso!";
-    header("Location: loginUsuario.php");
-    exit;
+if (mysqli_query($conexao, $sql)) {
+    header('Location: loginEmpresa.php');
+    exit();
 } else {
-    //$msg = "Error: ". $sql . "<br>". $conexao->error;
-    $conexao->close();
-    header("Location: cadastroUsuario.php");
-    exit;
+    // Página de erro personalizada
+    header('Location: erro_cadastro.php?erro=' . urlencode(mysqli_error($conexao)));
+    exit();
 }
-    
 
-
-//echo json_encode(['msg' => $msg]);
+// Não é necessário fechar a conexão explicitamente
+// pois o PHP fecha automaticamente quando o script termina
 ?>
