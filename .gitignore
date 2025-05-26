@@ -1,0 +1,9 @@
+/vendor/
+/composer.lock
+*.log
+*.cache
+*.tmp
+*.zip
+*.tar.gz
+.DS_Store
+Thumbs.db

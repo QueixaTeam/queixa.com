@@ -1,0 +1,108 @@
+/* Reset e base */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Navbar ocupa altura natural e largura 100% */
+nav.navbar {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+/* Conteúdo principal que preenche o restante da tela */
+.main-content {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+/* Metade azul com formulário */
+.blue-area {
+  background-color: #1EA2B6;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Container do card para limitar largura */
+.blue-area .container {
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Metade branca com texto e botão */
+.right-area {
+  width: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  color: black;
+}
+
+/* Texto grande e centralizado */
+.right-area p.fs-1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Botão na área branca */
+.right-area button {
+  max-width: 300px;
+}
+
+/* Container principal dividindo a tela em duas metades */
+.main-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Área azul à esquerda */
+.blue-area {
+  background-color: #1EA2B6; /* Azul Bootstrap */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Área branca à direita */
+.right-area {
+  width: 50%;
+  background-color: #fff;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+}
+
+/* Botões de envio*/
+.btn-custom {
+  background-color: #1EA2B6; 
+  color: white;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #178C99; 
+  color: white;
+}

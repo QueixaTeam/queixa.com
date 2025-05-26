@@ -9,12 +9,15 @@ if (strlen($termo) < 2) {
 }
 
 $termo = mysqli_real_escape_string($conexao, $termo);
-$sql = "SELECT nomeEmpresa FROM empresa WHERE nomeEmpresa LIKE '%$termo%' LIMIT 10";
+$sql = "SELECT idEmpresa, nomeEmpresa FROM empresa WHERE nomeEmpresa LIKE '%$termo%' LIMIT 10";
 $result = mysqli_query($conexao, $sql);
 
 $empresas = [];
 while ($row = mysqli_fetch_assoc($result)) {
-  $empresas[] = $row['nomeEmpresa'];
+  $empresas[] = [
+    'id'=>$row['idEmpresa'],
+    'nome'=>$row['nomeEmpresa']
+  ]; 
 }
 
 echo json_encode($empresas);

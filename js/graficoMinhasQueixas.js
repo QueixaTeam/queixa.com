@@ -6,20 +6,20 @@ google.charts.setOnLoadCallback(drawChart);
 
 // Função que desenha o gráfico
 function drawChart() {
-    fetch('dadosGraficoMenu.php')
+    fetch('dadosGraficoMinhasQueixas.php')
         .then(response => response.json())
         .then(data => {
             const chartData = google.visualization.arrayToDataTable(data);
 
             const options = {
-                title: 'Quantidade de empresas cadastradas por setor',
+                title: 'Quantidade de Queixas por empresa',
                 legend: { position: 'right' },
                 pieSliceText: 'none',
                 width: 400,
                 height: 170
             };
 
-            const chart = new google.visualization.PieChart(document.getElementById('grafico'));
+            const chart = new google.visualization.PieChart(document.getElementById('graficoQueixa'));
             chart.draw(chartData, options);
         })
         .catch(error => {

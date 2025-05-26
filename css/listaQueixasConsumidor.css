@@ -1,0 +1,11 @@
+/* Lista de queixas */
+.queixa {
+    border: 1px solid #ccc; /* contorno cinza claro */
+    padding: 10px;
+    border-radius: 5px; /* cantos arredondados, opcional */
+    background-color: #e9ecef; /* fundo branco pra destacar */
+}
+
+.conteiner-lista-queixas {
+    background-color: #fff;
+}

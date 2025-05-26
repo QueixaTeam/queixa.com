@@ -1,8 +1,12 @@
 <?php
 include_once './empresa.php';
+include_once './dadosPerfilEmpresa.php';
+
 ?>
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +23,12 @@ session_start();
         crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/perfilEmpresa.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- Google Charts -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- JS externo -->
+    <script src="js/graficoSuperiorPerfilEmpresa.js"></script>
+    <script src="js/graficoInferiorPerfilEmpresa.js"></script>
     <title>Queixa.com</title>
 </head>
 
@@ -32,8 +42,8 @@ session_start();
             </button>
             <!-- Itens que irão para o botão acima -->
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-                <form class="d-flex mx-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar por empresa" aria-label="Search">
+                <form class="d-flex mx-auto" role="search" method="get" action="perfilEmpresa.php">
+                    <input class="form-control me-2" name="nomeEmpresa" type="search" placeholder="Buscar por empresas" aria-label="Search">
                     <button class="btn btn-outline-custom" type="submit">Buscar</button>
                 </form>
                 <!-- Botões para redirecionar -->
@@ -84,10 +94,42 @@ session_start();
     </nav>
 
     <div class="container-fluid bg-light py-3 shadow">
+        <?php
+        // Define a classe do badge conforme a nota média da empresa
+        if ($mediaEmpresa !== null && $mediaEmpresa < 6) {
+            $classeBadgeEmpresa = "badge bg-danger fs-5"; // vermelho
+        } else if ($mediaEmpresa !== null && $mediaEmpresa >= 6) {
+            $classeBadgeEmpresa = "badge bg-success fs-5"; // verde
+        } else {
+            $classeBadgeEmpresa = "badge bg-secondary fs-5"; // cor padrão caso não tenha avaliação
+        }
+
+        // Define a classe do badge conforme a nota média dos produtos
+        if ($mediaProdutos !== null && $mediaProdutos < 6) {
+            $classeBadgeProdutos = "badge bg-danger fs-5"; // vermelho
+        } else if ($mediaProdutos !== null && $mediaProdutos >= 6) {
+            $classeBadgeProdutos = "badge bg-success fs-5"; // verde
+        } else {
+            $classeBadgeProdutos = "badge bg-secondary fs-5"; // cor padrão caso não tenha avaliação
+        }
+        ?>
         <div class="d-flex justify-content-between align-items-center">
-            <h2 class="mb-0">Nome da Empresa</h2>
-            <span class="badge bg-success fs-5">Nota: 4.5</span>
-            <a href="#" class="btn btn-primary">Fazer Avaliação</a>
+            <h2 class="mb-0"><?php echo $dadosEmpresa['nomeEmpresa']; ?></h2>
+
+            <span class="<?php echo $classeBadgeEmpresa; ?>">Nota média da empresa: <?php echo $mediaEmpresa !== null ?
+                number_format($mediaEmpresa, 1, ',', '.') : 'Sem avaliação'; ?>
+            </span>
+
+            <span class="<?php echo $classeBadgeProdutos; ?>">Nota média dos produtos da empresa: <?php echo $mediaProdutos !== null ?
+                number_format($mediaProdutos, 1, ',', '.') : 'Sem avaliação'; ?>
+            </span>
+
+            <?php
+            // Exibir botão se não estiver logado OU se for usuário comum (idUsuario)
+            if (!isset($_SESSION['user']) || isset($_SESSION['user']->idUsuario)) :
+            ?>
+                <a href="cadastroQueixa.php" class="btn btn-custom">Fazer Queixa</a>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -97,27 +139,21 @@ session_start();
             <div class="col-lg-4 mb-4">
                 <div class="mb-3 p-3 border rounded shadow-sm">
                     <!-- Gráfico 1 -->
-                    <h5>Gráfico 1</h5>
-                    <canvas id="grafico1"></canvas>
+
+                    <div id="graficoSup"></div>
                 </div>
                 <div class="p-3 border rounded shadow-sm">
                     <!-- Gráfico 2 -->
-                    <h5>Gráfico 2</h5>
-                    <canvas id="grafico2"></canvas>
+                    
+                    <div id="graficoInf"></div>
                 </div>
             </div>
 
             <!-- Coluna direita: queixas -->
-            <div class="col-lg-8">
-                <div class="p-3 border rounded shadow-sm">
+            <div class="col-lg-8 ">
+                <div class="p-3 border rounded shadow-sm conteiner-lista-queixas">
                     <h4>Queixas dos Consumidores</h4>
-                    <div class="queixa mb-3">
-                        <strong>João:</strong> Produto com defeito...
-                    </div>
-                    <div class="queixa mb-3">
-                        <strong>Maria:</strong> Atendimento demorado...
-                    </div>
-                    <!-- Adicione mais queixas dinamicamente aqui -->
+                    <?php include 'listaQueixas.php'; ?>
                 </div>
             </div>
         </div>

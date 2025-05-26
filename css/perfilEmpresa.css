@@ -24,3 +24,39 @@ body {
 .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Lista de queixas */
+.queixa {
+    border: 1px solid #ccc; /* contorno cinza claro */
+    padding: 10px;
+    border-radius: 5px; /* cantos arredondados, opcional */
+    background-color: #e9ecef; /* fundo branco pra destacar */
+}
+
+.conteiner-lista-queixas {
+    background-color: #fff;
+}
+
+/* Botão para fazer queixa */
+.btn-custom {
+  background-color: #1EA2B6; 
+  color: white;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #178C99; 
+  color: white;
+}
+
+/* Css do gráfico superior */
+#graficoSup {
+  height: 200px; 
+}
+
+#graficoInf {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  
+}
