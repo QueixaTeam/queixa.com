@@ -155,6 +155,9 @@ include_once 'produto.php';
         campoProduto.style.display = "block";
       } else {
         campoProduto.style.display = "none";
+
+        document.getElementById('idProduto').value = '';
+        document.getElementById('nomeProduto').value = '';
       }
     }
 
