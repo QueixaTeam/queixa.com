@@ -7,10 +7,10 @@ use Spipu\Html2Pdf\Exception\ExceptionFormatter;
 $tipo = $_GET['tipo'] ?? 'categoria'; // tipo recebido via URL 
 
 $arquivosValidos = [
-    'categoria' => 'contentQueixasProduto.php',
-    'empresa'   => 'contentEmpresa.php',
-    'usuario'   => 'contentUsuario.php',
-    'denuncia'  => 'contentDenuncia.php'
+    'queixasProduto' => 'contentQueixasProduto.php',
+    'MediaNotaProd'   => 'contentMediaNotaProd.php',
+    'ProdMelhorQueixa'   => 'contentProdMelhorQueixa.php',
+    'ProdPiorQueixa'  => 'contentProdPiorQueixa.php'
 ];
 
 if (!isset($arquivosValidos[$tipo])) {
