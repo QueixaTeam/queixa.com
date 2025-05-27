@@ -23,13 +23,8 @@ if (session_status() === PHP_SESSION_NONE) {
         rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
         crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/perfilEmpresa.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <!-- Google Charts -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- JS externo -->
-    <script src="js/graficoSuperiorPerfilEmpresa.js"></script>
-    <script src="js/graficoInferiorPerfilEmpresa.js"></script>
+    <link rel="stylesheet" href="css/cadastroProduto.css">
     <title>Queixa.com</title>
 </head>
 
@@ -95,20 +90,22 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-            <h4>Cadastro de Produto</h4>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card p-4 shadow" style="width: 100%; max-width: 500px;">
+        <div class="card-body">
+        <h4 class="text-center mb-4">Cadastro de Produto</h4>
+        <form action="insertProduto.php" method="POST">
+            <div class="mb-3">
+            <label for="nomeProduto" class="form-label">Nome do Produto</label>
+            <input type="text" class="form-control" id="nomeProduto" name="nomeProduto" required>
             </div>
-            <div class="card-body">
-                <form action="insertProduto.php" method="POST">
-                    <div class="mb-3">
-                        <label for="nomeProduto" class="form-label">Nome do Produto</label>
-                        <input type="text" class="form-control" id="nomeProduto" name="nomeProduto" required>
-                    </div>
-                    <button type="submit" class="btn btn-custom-form">Registrar</button>
-                    <a href="MenuPrincipal.php" class="btn btn-secondary">Voltar</a>
-                </form>
+            <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-custom-form">Registrar</button>
+            <a href="MenuPrincipal.php" class="btn btn-secondary">Voltar</a>
             </div>
+        </form>
         </div>
+    </div>
     </div>
 
 </body>

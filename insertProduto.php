@@ -16,7 +16,7 @@ $idEmpresa = $_SESSION['user']->idEmpresa;
 $sql = "INSERT INTO produto (nomeProduto, idEmpresa) VALUES ('$nomeProduto', '$idEmpresa')";
 
 if ($conexao->query($sql) === TRUE) {
-    header('Location: MenuPrincipal.php');
+    header('Location: cadastroProduto.php');
     $msg = "Produto registrado com sucesso!";
 } else {
     $msg = "Erro: " . $sql . "<br>" . $conexao->error;
