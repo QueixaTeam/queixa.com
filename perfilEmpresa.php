@@ -77,6 +77,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                 <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
                                     <li><a class="dropdown-item" href="perfilEmpresa.php">Perfil da empresa</a></li>
                                     <li><a class="dropdown-item" href="telaRelatorios.php">Relatórios</a></li>
+                                    <li><a class="dropdown-item" href="cadastroProduto.php">Cadastrar produtos</a>
                                 <?php else: ?>
                                     <li><a class="dropdown-item" href="minhasQueixas.php">Minhas queixas</a></li>
                                 <?php endif; ?>

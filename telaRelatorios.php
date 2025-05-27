@@ -63,6 +63,7 @@ session_start(); ?>
                                 <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
                                     <li><a class="dropdown-item" href="perfilEmpresa.php">Perfil da empresa</a></li>
                                     <li><a class="dropdown-item" href="#">Relatórios</a></li>
+                                    <li><a class="dropdown-item" href="cadastroProduto.php">Cadastrar produtos</a>
                                 <?php else: ?>
                                     <li><a class="dropdown-item" href="minhasQueixas.php">Minhas Queixas</a></li>
                                 <?php endif; ?>

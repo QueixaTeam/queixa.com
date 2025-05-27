@@ -82,7 +82,7 @@ include_once 'produto.php';
             <!-- Campo de empresa -->
           <div style="position: relative;">
             <label for="empresaInput" class="form-label">Qual a empresa referente?</label>
-            <input type="text" class="form-control" id="empresaInput" autocomplete="off" placeholder="Digite o nome da empresa">
+            <input type="text" class="form-control" id="empresaInput" autocomplete="off" placeholder="Digite o nome da empresa" require>
             <input type="hidden" name="idEmpresa" id="idEmpresa"> <!--campo escondido para armazenar idEmpresa-->
             <div id="buscaEmpresa" class="list-group position-absolute z-3 w-50" 
                 style="max-height: 200px; overflow-y: auto;"></div>
@@ -91,7 +91,7 @@ include_once 'produto.php';
             <!-- Nota -->
             <p>Digite a nota para a empresa ou produto</p>
             <div class="input-group mb-3" style="max-width: 150px;">
-              <input type="number" name="nota" class="form-control" min="0" max="10" step="1" placeholder="0" />
+              <input type="number" name="nota" class="form-control" min="0" max="10" step="1" placeholder="0" require/>
               <span class="input-group-text">/10</span>
             </div>
 
