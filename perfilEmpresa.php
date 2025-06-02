@@ -78,8 +78,10 @@ if (session_status() === PHP_SESSION_NONE) {
                                     <li><a class="dropdown-item" href="perfilEmpresa.php">Perfil da empresa</a></li>
                                     <li><a class="dropdown-item" href="telaRelatorios.php">Relatórios</a></li>
                                     <li><a class="dropdown-item" href="cadastroProduto.php">Cadastrar produtos</a>
+                                    <li><a class="dropdown-item" href="editarCadEmpresa.php">Editar dados</a></li>
                                 <?php else: ?>
-                                    <li><a class="dropdown-item" href="minhasQueixas.php">Minhas queixas</a></li>
+                                    <li><a class="dropdown-item" href="minhasQueixas.php">Minhas Queixas</a></li>
+                                    <li><a class="dropdown-item" href="editarCadUsuario.php">Editar dados</a></li>
                                 <?php endif; ?>
                             </ul>
                         </div>
