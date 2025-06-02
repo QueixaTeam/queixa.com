@@ -75,9 +75,11 @@ session_start();
                                 <li><a class="dropdown-item" href="logout.php">Deslogar</a></li>
                                 <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
                                     <li><a class="dropdown-item" href="perfilEmpresa.php">Perfil da empresa</a></li>
+                                    <li><a class="dropdown-item" href="editarCadEmpresa.php">Editar dados</a></li>
                                     <li><a class="dropdown-item" href="#">Relatórios</a></li>
                                 <?php else: ?>
                                     <li><a class="dropdown-item" href="minhasQueixas.php">Minhas Queixas</a></li>
+                                    <li><a class="dropdown-item" href="editarCadUsuario.php">Editar dados</a></li>
                                 <?php endif; ?>
                             </ul>
                         </div>
@@ -92,7 +94,7 @@ session_start();
             </div>
         </div>
     </nav>
-    <div class="container position-relative mt-5" >
+    <div class="container position-relative mt-5">
         <div class="box-custom-item1 position-absolute top-0 start-0 m-4 p-4 text-center">
             <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
                 <a href="perfilEmpresa.php" class="btn btn-custom-item1-empresa ">Veja as queixas da sua empresa</a>
