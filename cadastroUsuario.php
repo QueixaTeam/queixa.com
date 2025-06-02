@@ -29,9 +29,9 @@
       </button>
       <!-- Itens que irão para o botão acima -->
       <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-        <form class="d-flex mx-auto" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-custom" type="submit">Search</button>
+        <form class="d-flex mx-auto" role="search" method="get" action="perfilEmpresa.php">
+          <input class="form-control me-2" name="nomeEmpresa" type="search" placeholder="Buscar por empresas" aria-label="Search">
+          <button class="btn btn-outline-custom" type="submit">Buscar</button>
         </form>
         <!-- Botões para redirecionar -->
         <div class="d-flex align-items-center gap-2">
@@ -43,10 +43,9 @@
   </nav>
 
   <div class="container">
-    <img src="img/mascoteCadastro.png">
     <div class="card">
-      
-      <h1>LET'S CADASTRO</h1>
+
+      <h1>Cadastre-se Aqui!</h1>
 
       <form action="insertLoginUsuario.php" method="post">
         <h2>Digite seu nome</h2>
