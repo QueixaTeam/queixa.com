@@ -45,7 +45,7 @@
   <div class="container">
     <div class="card">
 
-      <h1>LET'S CADASTRO</h1>
+      <h1>Cadastre-se Aqui!</h1>
 
       <form action="insertLoginUsuario.php" method="post">
         <h2>Digite seu nome</h2>
