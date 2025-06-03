@@ -53,8 +53,11 @@ $result = mysqli_query($conexao, $query);
     <div class="container">
         <div class="card p-4 mx-auto" style="max-width: 600px;">
             <form action="insertCadEmpresa.php" method="post">
-                <h1 class="text-center mb-4">Vamos cadastrar sua empresa!</h1>
+                <h1 class="text-center mb-1">Vamos cadastrar sua empresa!</h1>
 
+                <img src="img/Queixinha.png" alt="Queixinha" style="height: 250px; width: 250px; display: block; margin: auto;">
+
+                
                 <div class="mb-3">
                     <label for="empresa" class="form-label">Digite o nome da empresa:</label>
                     <input type="text" class="form-control" id="empresa" name="empresa" required>

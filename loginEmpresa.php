@@ -47,7 +47,7 @@ session_start();
         <!-- Botões para redirecionar -->
         <div class="d-flex">
           <a href="loginEmpCon.php" class="btn btn-outline-custom">Entrar</a>
-          <a href="#" class="btn btn-outline-custom ms-2">Cadastrar</a>
+          <a href="cadastroEmpCon.php" class="btn btn-outline-custom ms-2">Cadastrar</a>
         </div>
       </div>
     </div>
@@ -95,6 +95,7 @@ session_start();
     <!--texto a direita na tela-->
     <div class="right-area">
       <p class="fs-1 text-center">Ainda não possui cadastro?</p>
+      <img src="img/Queixinha.png" alt="Queixinha" style="height: 300px; width: 300px;">
       <a href="cadastroEmpresa.php" class="btn btn-custom">Cadastrar minha empresa</a>
     </div>
 

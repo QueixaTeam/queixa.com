@@ -47,6 +47,8 @@
 
       <h1>Cadastre-se Aqui!</h1>
 
+      <img src="img/Queixinha.png" alt="Queixinha" style="height: 250px; width: 250px; display: block; margin: auto;">
+
       <form action="insertLoginUsuario.php" method="post">
         <h2>Digite seu nome</h2>
         <input type="text" name="nomeUsuario" placeholder="Primeiro nome" required>
