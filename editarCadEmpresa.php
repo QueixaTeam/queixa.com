@@ -86,8 +86,9 @@ $resultSetores = mysqli_query($conexao, $query);
                             <li><a class="dropdown-item" href="logout.php">Deslogar</a></li>
                             <?php if (isset($_SESSION['user']->nomeEmpresa)): ?>
                                 <li><a class="dropdown-item" href="perfilEmpresa.php">Perfil da empresa</a></li>
-                                <li><a class="dropdown-item" href="editarCadEmpresa.php">Editar dados</a></li>
-                                <li><a class="dropdown-item" href="#">Relatórios</a></li>
+                                    <li><a class="dropdown-item" href="telaRelatorios.php">Relatórios</a></li>
+                                    <li><a class="dropdown-item" href="cadastroProduto.php">Cadastrar produtos</a>
+                                    <li><a class="dropdown-item" href="editarCadEmpresa.php">Editar dados</a></li>
                             <?php else: ?>
                                 <li><a class="dropdown-item" href="minhasQueixas.php">Minhas Queixas</a></li>
                                 <li><a class="dropdown-item" href="editarCadUsuario.php">Editar dados</a></li>

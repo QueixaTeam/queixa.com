@@ -56,8 +56,8 @@ include_once 'produto.php';
                               <!-- Menu dropdown -->
                               <ul class="dropdown-menu">
                                   <li><a class="dropdown-item" href="logout.php">Deslogar</a></li>
-                                  <li><a class="dropdown-item" href="#">Minhas Queixas</a></li>
-                                  <li><a class="dropdown-item" href="editarCadEmpresa.php">Editar dados</a></li>
+                                  <li><a class="dropdown-item" href="minhasQueixas.php">Minhas Queixas</a></li>
+                                    <li><a class="dropdown-item" href="editarCadUsuario.php">Editar dados</a></li>
                               </ul>
                           </div>
                   </div>
